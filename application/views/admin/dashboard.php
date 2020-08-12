@@ -31,7 +31,7 @@
 		<tr>
 			<th>S No.</th>
 			<th>My Todos</th>
-			<th>Deadline</th>
+			<th>Description</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -44,7 +44,7 @@
 		<!-- <?php	print($art->id);?> -->
 			<td><?php echo  ++$count;  ?></td>
 			<td><?php echo $todo->todo; ?></td>
-			<td><?php echo $todo->deadline; ?></td>
+			<td><?php echo $todo->description; ?></td>
 			<td><?= anchor("admin/edituser/$todo->id",'EDIT',['class'=>'btn btn-info']); ?></td>
 			<td>
 				<?=
@@ -61,66 +61,11 @@
 			<tr colspan="4">No articles found</tr>
 		<?php  endif; ?>
 	</tbody>
-
-	
-
 </table>
 <br>
 <br>
-<br><!-- 
-<hr style="height:0.5px;border-width:0;color:gray;background-color:gray">
- -->
-
-
-
-
-<?php  echo $this->pagination->create_links();   ?>
-
-
-<!-- <hr style="height:1px;border-width:0;color:gray;background-color:gray"> -->
-
 <br>
-
-
- <!-- <ul class="pagination">
- 	<li><a href=""><</a></li>
- 	<li><a href="">1</a></li>
- 	<li><a href="">2</a></li>
- 	<li class="active"><a href="">3</a></li>
- 	<li><a href="">4</a></li>
- 	<li><a href="">5</a></li>
- 	<li><a href="">></a></li>
-
- </ul>
-
- <div>
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#">&laquo;</a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">4</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">5</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">&raquo;</a>
-    </li>
-  </ul>
-</div>
- -->
-
-
-
+<?php  echo $this->pagination->create_links();   ?>
+<br> 
 </div>
 <?php include('footer.php'); ?>
