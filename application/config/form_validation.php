@@ -8,8 +8,8 @@ $config = [
 				'rules'=>'required'
 				],
 				[
-				'field'=>'deadline',
-				'label'=>'DEADLINE',
+				'field'=>'description',
+				'label'=>'DESCRIPTION',
 				'rules'=>'required'
 				]
 
