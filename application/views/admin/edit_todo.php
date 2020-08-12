@@ -23,17 +23,18 @@
 					</div>
 				</div>		
 			</div>
-			<div class="form-group">
-				<label for="body"> Deadline</label>
+		<div class="form-group">
+				<label for="body">Description</label>
 				<div class="row">
 					<div class="col-lg-6">
-				<?php echo form_input(['class'=>'form-control','type'=>'date','id'=>'body','placeholder'=>'Enter your Todo deadline', 'name'=>'deadline','value'=>set_value('deadline',$todos->deadline)]);?>
+				<?php echo form_textarea(['class'=>'form-control','type'=>'text','id'=>'body','placeholder'=>'Enter your Description', 'name'=>'description','value'=>set_value('description',$todos->description)]);?>
 					</div>
 					<div class="col-lg-6" style="margin-top: 7px">  
-						<?php echo form_error('deadline'); ?>
+						<?php echo form_error('description'); ?>
 					</div>
 				</div>	
 			</div>
+			
 			
 			<div class="form-group">
 				<?php echo form_submit(['type'=>'submit','value'=>'Update','class'=>'btn btn-success']); ?>
