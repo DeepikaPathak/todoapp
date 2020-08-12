@@ -37,7 +37,7 @@ class Loginmodel extends CI_model{
 
 	}
 	public function find_des($todoid){
-		$q = $this->db->select(['id','todo','deadline'])
+		$q = $this->db->select(['id','todo','description'])
 						->where('id',$todoid)
 						->get('todos');
 		return $q->row();
@@ -48,8 +48,8 @@ class Loginmodel extends CI_model{
 
 	}
 
-	public function add_user($firstname,$lastname,$email,$password,$mobile){
-		$array=['firstname'=>$firstname,'lastname'=>$lastname,'email'=>$email,'password'=>$password,'mobile'=>$mobile];
+	public function add_user($name,$email,$mobile,$dob,$pincode,$password){
+		$array=['name'=>$name,'email'=>$email,'mobile'=>$mobile,'dob'=>$dob,'pincode'=>$pincode,'password'=>$password];
 		
 		return $this->db->insert('users',$array);
 	}
@@ -64,5 +64,6 @@ class Loginmodel extends CI_model{
 		return $this->db->delete('todos',['id'=>$id]);
 	}
 }
+
 
 ?>
