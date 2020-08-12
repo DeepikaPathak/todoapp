@@ -8,11 +8,6 @@ class Admin extends MY_Controller{
     	}
 	}
 
-	
-	
-	
-
-
 	public function welcome(){
 
 		$this->load->model('loginmodel');
@@ -20,27 +15,23 @@ class Admin extends MY_Controller{
 		$config = [
 			'base_url'=>base_url('admin/welcome'),
 			'per_page'=> 3,
-			'total_rows'=>$this->loginmodel->num_rows(),
+			'total_rows'=>$this->loginmodel->num_rows(),			
 			'full_tag_open'=>"<ul class='pagination pagination-sm'>",
-        		'full_tag_close'=>"</ul>",
-       			'first_tag_open' =>"<li class='page-item page-link'>",
-       			'first_tag_close' =>"</li>",
-        		'last_tag_open' =>"<li class='page-item page-link'>",
-        		'last_tag_close' =>"</li>",
-        		'next_tag_open' =>"<li class='page-item page-link'>",
-        		'next_tag_close' =>"</li>",
-        		'prev_tag_open' =>"<li class='page-item page-link'>",
-        		'prev_tag_close' =>"</li>",
-        		'num_tag_open' =>"<li class='page-item page-link'>",
-        		'num_tag_close' =>"</li>",
-       			'cur_tag_open' =>"<li class='page-item active'><a class= 'page-link'>",
-        		'cur_tag_close' =>"</a></li>"
-			];
+        	'full_tag_close'=>"</ul>",
+        	'first_tag_open' =>"<li class='page-item page-link'>",
+        	'first_tag_close' =>"</li>",
+        	'last_tag_open' =>"<li class='page-item page-link'>",
+       		'last_tag_close' =>"</li>",
+        	'next_tag_open' =>"<li class='page-item page-link'>",
+        	'next_tag_close' =>"</li>",
+        	'prev_tag_open' =>"<li class='page-item page-link'>",
+        	'prev_tag_close' =>"</li>",
+        	'num_tag_open' =>"<li class='page-item page-link'>",
+        	'num_tag_close' =>"</li>",
+        	'cur_tag_open' =>"<li class='page-item active'><a class= 'page-link'>",
+        	'cur_tag_close' =>"</a></li>"
+		];
 		$this->pagination->initialize($config);
-
-
-
-
 		$todos = $this->loginmodel->articleList($config['per_page'],$this->uri->segment(3));
 		$this->load->view('admin/dashboard',['todos'=>$todos]);
 	}
@@ -139,8 +130,5 @@ class Admin extends MY_Controller{
 		$this->session->unset_userdata('id');
 		return redirect('login');
 	}
-
-	
-
 }
 ?>
